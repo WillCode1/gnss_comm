@@ -23,7 +23,7 @@ float64 vel_d       # NED down velocity [m/s]
 float64 vel_acc     # speed accuracy estimate [m/s]
 
 # GnssTimeMsg time    # 导航历元的 GNSS 时间
-# uint8 fix_type      # GNSS 固定类型（0=无固定，1=仅死推，2=2D 固定，3=3D 固定，4=GNSS+死推组合，5=仅时间固定）
+# uint8 fix_type      # GNSS 固定类型（0=无固定，1=仅死推，2=2D 固定，3=3D 固定，4=GNSS+航迹推算组合，5=仅时间固定）
 # bool valid_fix      # 固定有效性（1=有效固定）
 # bool diff_soln      # 是否应用了差分修正（1=已应用）
 # uint8 carr_soln     # 载波相位范围解算状态（0=无载波相位，1=浮动，2=固定）
