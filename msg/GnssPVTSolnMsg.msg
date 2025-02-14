@@ -1,5 +1,6 @@
 # This message contains information of UBX-NAV-PVT message. 
 # reference: [1]. UBX-18010854-R08, page 132
+# 该消息包含 GNSS 定位解算结果
 
 GnssTimeMsg time    # GNSS time of the navigation epoch
 # GNSS fix type (0=no fix, 1=dead reckoning only, 2=2D-fix, 3=3D-fix, 
@@ -20,8 +21,6 @@ float64 vel_n       # NED north velocity [m/s]
 float64 vel_e       # NED east velocity [m/s]
 float64 vel_d       # NED down velocity [m/s]
 float64 vel_acc     # speed accuracy estimate [m/s]
-
-# 该消息包含 GNSS 定位解算结果
 
 # GnssTimeMsg time    # 导航历元的 GNSS 时间
 # uint8 fix_type      # GNSS 固定类型（0=无固定，1=仅死推，2=2D 固定，3=3D 固定，4=GNSS+死推组合，5=仅时间固定）
