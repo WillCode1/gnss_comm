@@ -20,3 +20,23 @@ float64 vel_n       # NED north velocity [m/s]
 float64 vel_e       # NED east velocity [m/s]
 float64 vel_d       # NED down velocity [m/s]
 float64 vel_acc     # speed accuracy estimate [m/s]
+
+# 该消息包含 GNSS 定位解算结果
+
+# GnssTimeMsg time    # 导航历元的 GNSS 时间
+# uint8 fix_type      # GNSS 固定类型（0=无固定，1=仅死推，2=2D 固定，3=3D 固定，4=GNSS+死推组合，5=仅时间固定）
+# bool valid_fix      # 固定有效性（1=有效固定）
+# bool diff_soln      # 是否应用了差分修正（1=已应用）
+# uint8 carr_soln     # 载波相位范围解算状态（0=无载波相位，1=浮动，2=固定）
+# uint8 num_sv        # 解算中使用的卫星数量
+# float64 latitude    # 纬度 [度]
+# float64 longitude   # 经度 [度]
+# float64 altitude    # 椭球高 [米]
+# float64 height_msl  # 平均海平面高 [米]
+# float64 h_acc       # 水平精度估计 [米]
+# float64 v_acc       # 垂直精度估计 [米]
+# float64 p_dop       # 位置 DOP
+# float64 vel_n       # NED 坐标系下的北向速度 [米/秒]
+# float64 vel_e       # NED 坐标系下的东向速度 [米/秒]
+# float64 vel_d       # NED 坐标系下的下向速度 [米/秒]
+# float64 vel_acc     # 速度精度估计 [米/秒]
