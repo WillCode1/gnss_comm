@@ -1,5 +1,5 @@
 # 该消息包含 GNSS 卫星信息
-
+Header header
 uint32[] sat           # 卫星编号数组
 uint32[] freqo         # 频率编号数组
 bool[] health          # 卫星健康状态数组（1=健康，0=不健康）
