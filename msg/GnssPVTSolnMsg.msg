@@ -1,6 +1,6 @@
 # This message contains information of UBX-NAV-PVT message. 
 # reference: [1]. UBX-18010854-R08, page 132
-# 该消息包含 GNSS 定位解算结果
+# 该消息包含 RTK 定位解算结果
 
 GnssTimeMsg time    # GNSS time of the navigation epoch
 # GNSS fix type (0=no fix, 1=dead reckoning only, 2=2D-fix, 3=3D-fix, 
