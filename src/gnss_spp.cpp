@@ -133,6 +133,12 @@ namespace gnss_comm
             Eigen::Vector3d unit_rv2sv = rv2sv.normalized();
             // 该项用于修正由于地球自转引起的测距误差，以提高定位精度:《GNSS精密单点定位理论方法及其应用》
             // https://blog.csdn.net/qq_58309598/article/details/135917596
+            /*
+                rcv_state 是一个包含接收机状态信息的向量。
+                其中，rcv_state(3 + sys2idx.at(this_sys)) 表示接收机钟差（即接收机时钟与系统时间的偏差）。
+                sys2idx 是一个将 GNSS 系统（如 GPS、GLONASS 等）映射到索引的映射表，this_sys 表示当前使用的 GNSS 系统。
+                因此，3 + sys2idx.at(this_sys) 计算出接收机钟差在 rcv_state 向量中的位置，从而获取对应 GNSS 系统的接收机钟差，用于修正伪距估计中的时间偏差。
+             */
             double sagnac_term = EARTH_OMG_GPS*(sv_pos(0)*rcv_state(1,0)-
                 sv_pos(1)*rcv_state(0,0))/LIGHT_SPEED;
             double psr_estimated = rv2sv.norm() + sagnac_term + rcv_state(3+sys2idx.at(this_sys)) -
