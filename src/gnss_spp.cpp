@@ -131,6 +131,8 @@ namespace gnss_comm
 
             Eigen::Vector3d rv2sv = sv_pos - rcv_state.topLeftCorner<3,1>();
             Eigen::Vector3d unit_rv2sv = rv2sv.normalized();
+            // 该项用于修正由于地球自转引起的测距误差，以提高定位精度:《GNSS精密单点定位理论方法及其应用》
+            // https://blog.csdn.net/qq_58309598/article/details/135917596
             double sagnac_term = EARTH_OMG_GPS*(sv_pos(0)*rcv_state(1,0)-
                 sv_pos(1)*rcv_state(0,0))/LIGHT_SPEED;
             double psr_estimated = rv2sv.norm() + sagnac_term + rcv_state(3+sys2idx.at(this_sys)) -
