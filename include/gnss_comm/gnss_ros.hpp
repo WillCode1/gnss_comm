@@ -31,6 +31,7 @@
 #include <gnss_comm/GnssPVTSolnMsg.h>
 #include <gnss_comm/GnssSvsMsg.h>
 #include <gnss_comm/GnssTimePulseInfoMsg.h>
+#include <gnss_comm/GnssLeapSecondsInfoMsg.h>
 #include <gnss_comm/StampedFloat64Array.h>
 
 #include "gnss_constant.hpp"
@@ -110,6 +111,7 @@ namespace gnss_comm
     *-----------------------------------------------------------------------------*/
     GnssSvsMsg svs2msg(const std::vector<SvInfo> &svs);
 
+    GnssLeapSecondsInfoMsg ls_info2msg(const LeapSecondsInfoPtr &tp_info);
 }   // namespace gnss_comm
 
 #endif

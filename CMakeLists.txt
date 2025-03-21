@@ -23,6 +23,7 @@ add_message_files(FILES
     GnssPVTSolnMsg.msg
     GnssSvsMsg.msg
     GnssTimePulseInfoMsg.msg
+    GnssLeapSecondsInfoMsg.msg
     StampedFloat64Array.msg
 )
 

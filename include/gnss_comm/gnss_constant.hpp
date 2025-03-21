@@ -367,6 +367,18 @@ namespace gnss_comm
     };
     typedef std::shared_ptr<TimePulseInfo> TimePulseInfoPtr;
 
+    struct LeapSecondsInfo                /* leap seconds information */
+    {
+        bool valid_curr_ls;
+        bool valid_time_to_ls_event;
+        uint8_t src_Of_curr_ls;
+        int8_t curr_ls;
+        uint8_t src_of_ls_change;
+        int8_t ls_change;
+        int32_t time_to_ls_event;
+    };
+    typedef std::shared_ptr<LeapSecondsInfo> LeapSecondsInfoPtr;
+
     struct BestSat
     {
         gtime_t     time;

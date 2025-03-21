@@ -229,6 +229,19 @@ namespace gnss_comm
         return tp_info_msg;
     }
 
+    GnssLeapSecondsInfoMsg ls_info2msg(const LeapSecondsInfoPtr &ls_info)
+    {
+        GnssLeapSecondsInfoMsg ls_info_msg;
+        ls_info_msg.valid_curr_ls = ls_info->valid_curr_ls;
+        ls_info_msg.valid_time_to_ls_event = ls_info->valid_time_to_ls_event;
+        ls_info_msg.src_Of_curr_ls = ls_info->src_Of_curr_ls;
+        ls_info_msg.curr_ls = ls_info->curr_ls;
+        ls_info_msg.src_of_ls_change = ls_info->src_of_ls_change;
+        ls_info_msg.ls_change = ls_info->ls_change;
+        ls_info_msg.time_to_ls_event = ls_info->time_to_ls_event;
+        return ls_info_msg;
+    }
+
     TimePulseInfoPtr msg2tp_info(const GnssTimePulseInfoMsgConstPtr &gnss_tp_info_msg)
     {
         TimePulseInfoPtr tp_info(new TimePulseInfo());
